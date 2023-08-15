@@ -9,13 +9,11 @@ const PhotoDetailsModal = ({
   setSelectPhotoData,
   onCloseModal,
   favorites,
-  setFavorites,
   toggleFavorite,
   setIsModalVisible
 }) => {
 
   const isFavorite = favorites.includes(selectPhotoData.id);
-  console.log("modal", selectPhotoData.id, isFavorite);
   return (
     <div className="photo-details-modal">
       <button className="photo-details-modal__close-button" onClick={onCloseModal}>
@@ -33,7 +31,6 @@ const PhotoDetailsModal = ({
       </div>
       <PhotoList
         photos={Object.values(selectPhotoData.similar_photos)}
-        setFavorites={setFavorites}
         favorites={favorites}
         setSelectPhotoData={setSelectPhotoData}
         setIsModalVisible={setIsModalVisible}

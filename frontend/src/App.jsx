@@ -8,7 +8,6 @@ const App = () => {
   const [favorites, setFavorites] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectPhotoData, setSelectPhotoData] = useState({});
-  console.log(favorites);
 
   const handleCloseModal = () => {
     setIsModalVisible(false);
@@ -27,7 +26,6 @@ const App = () => {
       <HomeRoute
         photos={photos}
         favorites={favorites}
-        setFavorites={setFavorites}
         setSelectPhotoData={setSelectPhotoData}
         setIsModalVisible={setIsModalVisible}
         toggleFavorite={toggleFavorite} // Pass toggleFavorite function
@@ -35,7 +33,6 @@ const App = () => {
       {isModalVisible && (
         <PhotoDetailsModal
           favorites={favorites}
-          setFavorites={setFavorites}
           toggleFavorite={toggleFavorite}
           selectPhotoData={selectPhotoData}
           onCloseModal={handleCloseModal}

@@ -4,12 +4,12 @@ import "../styles/PhotoListItem.scss";
 
 const PhotoListItem = (props) => {
   const { id, location, urls, user } = props.data;
-  const {setSelectPhotoData, favorites, setFavorites, setIsModalVisible, toggleFavorite } = props;
+  const {setSelectPhotoData, favorites, setIsModalVisible, toggleFavorite } = props;
   const isFavorite = favorites.includes(id);
-  console.log("item", id, isFavorite);
 //Modal
   const handleOpenModal = () => {
     setIsModalVisible(true);
+    console.log(props, props.data)
     setSelectPhotoData(props.data);
   };
 
