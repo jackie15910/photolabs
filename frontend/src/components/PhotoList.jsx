@@ -13,6 +13,7 @@ const PhotoList = ({setIsModalVisible, setSelectPhotoData, photos, setFavorites,
           favorites={favorites}
           setSelectPhotoData={setSelectPhotoData}
           setIsModalVisible={setIsModalVisible}
+          toggleFavorite={toggleFavorite}
         />
       ))}
     </ul>

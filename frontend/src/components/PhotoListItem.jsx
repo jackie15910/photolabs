@@ -9,6 +9,7 @@ const PhotoListItem = (props) => {
 
   const toggleFavorite = () => {
     setFavorite(!favorite);
+    props.toggleFavorite(id); // Toggle favorite status in the modal
     if (favorites.includes(id)){
       const idIndex = favorites.indexOf(id)
       favorites.splice(idIndex, 1);
