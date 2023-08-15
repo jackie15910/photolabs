@@ -8,7 +8,7 @@ const App = () => {
   const [favorites, setFavorites] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectPhotoData, setSelectPhotoData] = useState({});
-  const [modalFavorites, setModalFavorites] = useState([]);
+  console.log(favorites);
 
   const handleCloseModal = () => {
     setIsModalVisible(false);
@@ -30,7 +30,6 @@ const App = () => {
         setFavorites={setFavorites}
         setSelectPhotoData={setSelectPhotoData}
         setIsModalVisible={setIsModalVisible}
-        modalFavorites={modalFavorites} // Pass modal favorites
         toggleFavorite={toggleFavorite} // Pass toggleFavorite function
       />
       {isModalVisible && (
@@ -40,7 +39,8 @@ const App = () => {
           toggleFavorite={toggleFavorite}
           selectPhotoData={selectPhotoData}
           onCloseModal={handleCloseModal}
-          modalFavorites={modalFavorites} // Pass modal favorites
+          setSelectPhotoData={setSelectPhotoData}
+          setIsModalVisible={setIsModalVisible}
         />
       )}
     </div>

@@ -4,33 +4,22 @@ import "../styles/PhotoListItem.scss";
 
 const PhotoListItem = (props) => {
   const { id, location, urls, user } = props.data;
-  const {setSelectPhotoData, favorites, setFavorites, setIsModalVisible } = props;
-  const [favorite, setFavorite] = useState(false);
-
-  const toggleFavorite = () => {
-    setFavorite(!favorite);
-    props.toggleFavorite(id); // Toggle favorite status in the modal
-    if (favorites.includes(id)){
-      const idIndex = favorites.indexOf(id)
-      favorites.splice(idIndex, 1);
-      setFavorites([...favorites])
-      return
-    }
-    setFavorites([...favorites, id]);
-  };
-
+  const {setSelectPhotoData, favorites, setFavorites, setIsModalVisible, toggleFavorite } = props;
+  const isFavorite = favorites.includes(id);
+  console.log("item", id, isFavorite);
 //Modal
-
   const handleOpenModal = () => {
     setIsModalVisible(true);
     setSelectPhotoData(props.data);
   };
 
-  
+  const onToggle = () => {
+    toggleFavorite(id);
+  }
 
   return (
     <div className="photo-list__item">
-      <PhotoFavButton isFavorite={favorite} onToggle={toggleFavorite} />
+      <PhotoFavButton isFavorite={isFavorite} onToggle={onToggle} />
       <button onClick={handleOpenModal} className="photo-button">
         <img src={urls.regular} className="photo-list__image" />
       </button>

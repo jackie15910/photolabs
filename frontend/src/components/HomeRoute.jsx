@@ -3,7 +3,14 @@ import TopNavigationBar from "./TopNavigationBar";
 import PhotoList from "./PhotoList";
 import "../styles/HomeRoute.scss";
 
-const HomeRoute = ({photos, setSelectPhotoData, setFavorites, favorites, setIsModalVisible}) => {
+const HomeRoute = ({
+  photos,
+  setSelectPhotoData,
+  setFavorites,
+  favorites,
+  setIsModalVisible,
+  toggleFavorite
+}) => {
   return (
     <div className="home-route">
       <TopNavigationBar favoritesLength={favorites.length} />
@@ -13,6 +20,7 @@ const HomeRoute = ({photos, setSelectPhotoData, setFavorites, favorites, setIsMo
         favorites={favorites}
         setSelectPhotoData={setSelectPhotoData}
         setIsModalVisible={setIsModalVisible}
+        toggleFavorite={toggleFavorite}
       />
     </div>
   );
