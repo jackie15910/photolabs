@@ -18,3 +18,14 @@
   text-underline-position: auto;
   margin-left: 24px;
 }
+.top-nav-bar-section {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+  .fav-badge{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+}

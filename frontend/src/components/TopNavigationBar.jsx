@@ -9,8 +9,10 @@ const TopNavigationBar = ({ favoritesLength, onFavoriteToggle }) => {
   return (
     <div className="top-nav-bar">
       <span className="top-nav-bar__logo">PhotoLabs</span>
+      <div className="top-nav-bar-section">
       <TopicList />
       <FavBadge isFavPhotoExist={isFavFilled} filled={isFavFilled} />
+      </div>
     </div>
   );
 };

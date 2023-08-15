@@ -13,6 +13,8 @@ const PhotoDetailsModal = ({
   setIsModalVisible
 }) => {
 
+  console.log("selectPhotoData", selectPhotoData)
+
   const isFavorite = favorites.includes(selectPhotoData.id);
   return (
     <div className="photo-details-modal">
