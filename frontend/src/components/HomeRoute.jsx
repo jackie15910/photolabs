@@ -5,6 +5,7 @@ import "../styles/HomeRoute.scss";
 
 const HomeRoute = ({
   photos,
+  topics,
   setSelectPhotoData,
   setFavorites,
   favorites,
@@ -13,7 +14,7 @@ const HomeRoute = ({
 }) => {
   return (
     <div className="home-route">
-      <TopNavigationBar favoritesLength={favorites.length} />
+      <TopNavigationBar favoritesLength={favorites.length} topics={topics} />
       <PhotoList
         photos={photos}
         setFavorites={setFavorites}
