@@ -3,14 +3,14 @@ import FavBadge from "./FavBadge";
 import TopicList from "./TopicList";
 import "../styles/TopNavigationBar.scss";
 
-const TopNavigationBar = ({ favoritesLength, onFavoriteToggle, topics }) => {
+const TopNavigationBar = ({ favoritesLength, onFavoriteToggle, topics, onTopicSelect }) => {
   const isFavFilled = favoritesLength > 0;
 
   return (
     <div className="top-nav-bar">
       <span className="top-nav-bar__logo">PhotoLabs</span>
       <div className="top-nav-bar-section">
-      <TopicList topics={topics}/>
+      <TopicList topics={topics} onTopicSelect={onTopicSelect}/>
       <FavBadge isFavPhotoExist={isFavFilled} filled={isFavFilled} />
       </div>
     </div>

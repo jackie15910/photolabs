@@ -8,7 +8,6 @@ const PhotoListItem = (props) => {
   const isFavorite = favorites.includes(id);
 //Modal
   const handleOpenModal = () => {
-    // console.log("data", props.data)
     setSelectPhotoData(props.data);
     setIsModalVisible(true);
   };

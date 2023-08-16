@@ -53,6 +53,11 @@ export default function useApplicationData() {
     .then(data => dispatch({ type: ACTIONS.SET_TOPIC_DATA, topicData: data}));
   }, []);
 
+  const onTopicSelect = (topic_id) => {
+    fetch(`/api/topics/photos/${topic_id}`).then(response => response.json())
+    .then(data => dispatch({ type: ACTIONS.SET_PHOTO_DATA, photoData: data}));
+  }
+
   const toggleFavorite = (photoId) => {
     if (state.favorites.includes(photoId)) {
       dispatch({ type: ACTIONS.FAV_PHOTO_REMOVED, photoId });
@@ -80,5 +85,6 @@ export default function useApplicationData() {
     setPhotoSelected,
     onClosePhotoDetailsModal,
     onOpenPhotoDetailsModal,
+    onTopicSelect
   }
 }

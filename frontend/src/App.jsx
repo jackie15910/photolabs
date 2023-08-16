@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import useApplicationData from "hooks/useApplicationData";
 import HomeRoute from "./components/HomeRoute";
 import PhotoDetailsModal from "./routes/PhotoDetailsModal";
-import photos from "./mocks/photos";
-import topics from 'mocks/topics';
 import "./App.scss";
 
 const App = () => {
@@ -14,6 +12,7 @@ const App = () => {
     setPhotoSelected,
     onClosePhotoDetailsModal,
     onOpenPhotoDetailsModal,
+    onTopicSelect,
   } = useApplicationData()
 
 
@@ -23,6 +22,7 @@ const App = () => {
         photos={state.photoData}
         topics={state.topicData}
         favorites={state.favorites}
+        onTopicSelect={onTopicSelect}
         setSelectPhotoData={setPhotoSelected}
         setIsModalVisible={onOpenPhotoDetailsModal}
         toggleFavorite={toggleFavorite} // Pass toggleFavorite function

@@ -10,11 +10,12 @@ const HomeRoute = ({
   setFavorites,
   favorites,
   setIsModalVisible,
-  toggleFavorite
+  toggleFavorite,
+  onTopicSelect
 }) => {
   return (
     <div className="home-route">
-      <TopNavigationBar favoritesLength={favorites.length} topics={topics} />
+      <TopNavigationBar favoritesLength={favorites.length} topics={topics} onTopicSelect={onTopicSelect} />
       <PhotoList
         photos={photos}
         setFavorites={setFavorites}
